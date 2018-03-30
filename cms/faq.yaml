@@ -1,12 +1,180 @@
 -   io: output
-    key: booking
-    language: en
-    tag: ''
-    type: string
-    value: Booking value
--   io: output
     key: hello
     language: en
     tag: ''
     type: string
-    value: Hello value
+    value: hello CMS value
+-   io: output
+    key: booking
+    language: en
+    tag: ''
+    type: string
+    value: Booking CMS value
+-   io: output
+    key: transportation01
+    language: en
+    tag: ''
+    type: string
+    value: transportation01 CMS value
+-   io: output
+    key: transportation02
+    language: en
+    tag: ''
+    type: string
+    value: transportation02 CMS value
+-   io: output
+    key: transportation03
+    language: en
+    tag: ''
+    type: string
+    value: transportation03 CMS value
+-   io: output
+    key: parking
+    language: en
+    tag: ''
+    type: string
+    value: parking CMS value
+-   io: output
+    key: parking01
+    language: en
+    tag: ''
+    type: string
+    value: parking01 CMS value
+-   io: output
+    key: breakfast
+    language: en
+    tag: ''
+    type: string
+    value: breakfast CMS value
+-   io: output
+    key: confirmBooking
+    language: en
+    tag: ''
+    type: string
+    value: confirmBooking CMS value
+-   io: output
+    key: checkInTimes
+    language: en
+    tag: ''
+    type: string
+    value: checkInTimes CMS value
+-   io: output
+    key: gym
+    language: en
+    tag: ''
+    type: string
+    value: gym CMS value
+-   io: output
+    key: hotelRestaurantInfo
+    language: en
+    tag: ''
+    type: string
+    value: hotelRestaurantInfo CMS value
+-   io: output
+    key: hotelRestaurantBooking
+    language: en
+    tag: ''
+    type: string
+    value: hotelRestaurantBooking CMS value
+-   io: output
+    key: receipt
+    language: en
+    tag: ''
+    type: string
+    value: receipt CMS value
+-   io: output
+    key: twin
+    language: en
+    tag: ''
+    type: string
+    value: twin CMS value
+-   io: output
+    key: lostAndFound
+    language: en
+    tag: ''
+    type: string
+    value: lostAndFound CMS value
+-   io: output
+    key: earlyCheckIn
+    language: en
+    tag: ''
+    type: string
+    value: earlyCheckIn CMS value
+-   io: output
+    key: agePolicy
+    language: en
+    tag: ''
+    type: string
+    value: agePolicy CMS value
+-   io: output
+    key: elevator
+    language: en
+    tag: ''
+    type: string
+    value: elevator CMS value
+-   io: output
+    key: postDelivery
+    language: en
+    tag: ''
+    type: string
+    value: postDelivery CMS value
+-   io: output
+    key: checkOutTimes
+    language: en
+    tag: ''
+    type: string
+    value: checkOutTimes CMS value
+-   io: output
+    key: airCondition
+    language: en
+    tag: ''
+    type: string
+    value: airCondition CMS value
+-   io: output
+    key: depositRelease
+    language: en
+    tag: ''
+    type: string
+    value: depositRelease CMS value
+-   io: output
+    key: hotelLocation
+    language: en
+    tag: ''
+    type: string
+    value: hotelLocation CMS value
+-   io: output
+    key: connecting
+    language: en
+    tag: ''
+    type: string
+    value: connecting CMS value
+-   io: output
+    key: bikeRental
+    language: en
+    tag: ''
+    type: string
+    value: bikeRental CMS value
+-   io: output
+    key: meetingRoomInfo
+    language: en
+    tag: ''
+    type: string
+    value: meetingRoomInfo CMS value
+-   io: output
+    key: meetingRoomBooking
+    language: en
+    tag: ''
+    type: string
+    value: meetingRoomBooking CMS value
+-   io: output
+    key: roomserviceInfo
+    language: en
+    tag: ''
+    type: string
+    value: roomserviceInfo CMS value
+-   io: output
+    key: roomserviceOrder
+    language: en
+    tag: ''
+    type: string
+    value: roomserviceOrder CMS value
