@@ -1,0 +1,12 @@
+-   io: output
+    key: booking
+    language: en
+    tag: ''
+    type: string
+    value: Booking value
+-   io: output
+    key: hello
+    language: en
+    tag: ''
+    type: string
+    value: Hello value
