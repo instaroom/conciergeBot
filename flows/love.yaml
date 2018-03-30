@@ -1,0 +1,14 @@
+name: love
+states:
+    set_state:
+        component: meya.set
+        properties:
+            key: context
+            value: '{{ flow.intent }}'
+            scope: user
+    firstText:
+        component: meya.text
+        properties:
+                text: I am just glad I can help :)
+        relative: 2
+        return: true

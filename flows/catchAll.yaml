@@ -1,0 +1,36 @@
+name: catchAll
+states:
+    hiThanks:
+        component: meya.set
+        properties:
+            key: hiThanks
+            value: "no"
+            scope: user
+    text_state:
+        component: meya.text
+        properties:
+            text: I am sorry. I don't know that.
+        delay:
+            relative: 2
+    human:           
+        component: meya.text_buttons
+        properties:
+            text: Would you like me to check with my human colleague?
+            mode: buttons
+            buttons:
+              - text: Yes
+                action: text_state2
+              - text: No
+                action: text_state3
+        transitions:
+            text_state2: text_state2
+            text_state3: text_state3
+    text_state2:
+        component: meya.text
+        properties:
+            text: Awesome. In the meantime, just let me know if there is anything else I can help you with :)
+        return: true
+    text_state3:
+        component: meya.text
+        properties:
+            text: Ok No

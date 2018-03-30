@@ -1,0 +1,46 @@
+name: hello
+states:
+   # checkIfAutoGreeting:
+   #     component: meya.conditional_equal
+   #     properties:
+   #         value1: '{{ user.autoGreeting }}'
+   #         value2: "yes"
+   #     transitions:
+   #         equal: helloDone
+   #         notequal: checkIfReturning
+    checkIfReturning:
+        component: meya.conditional_equal
+        properties:
+            value1: '{{ user.firstGreeting }}'
+            value2: "yes"
+        transitions:
+            equal: thirdText
+            notequal: firstText
+    firstText:   
+        component: meya.text  
+        properties:
+            text: 👋 Hi! I'm Max. You can ask me anything.
+        delay:
+            relative: 1
+    secondText:   
+        component: meya.text
+        properties:
+            text: If I don't know the answer, I will pass it on to one of my human colleagues 😉
+        delay:
+            relative: 1
+    set_state:
+        component: meya.set
+        properties:
+            key: firstGreeting
+            value: "yes"
+            scope: user
+        transitions:
+            next: helloDone
+    thirdText:   
+        component: meya.text  
+        properties:
+            text: What can I help you with today? 😊
+        delay:
+            relative: 1
+    helloDone:
+        return: true

@@ -1,0 +1,10 @@
+name: booking
+states:
+    text_state:
+        component: meya.text
+        properties:
+            text: Making bookings is someting I still need to learn how to do. I will ask my human colleague to assist me.
+    text_state2:
+        component: meya.text
+        properties:
+            text: Please leave all information about your booking here 😮

@@ -1,0 +1,136 @@
+# Main flow, intent identifier 
+# '{{ flow.intent }}'
+# '{{ flow.greetings }}'
+
+name: greetings
+states:
+    changeFlow:
+        component: meya.conditional_nlp_intent
+        transitions:
+            hello: hello
+            thanks: thanks
+            howAreYou: howAreYou
+            parking: parking
+            transport: transport
+            breakfast: breakfast
+            checkIn: checkIn
+            love: love
+            booking: booking
+            origin: random
+            botAge: random
+            # yes: yesflow
+            # no: noFlow
+    helloFirst:
+        flow: hello
+        transitions:
+            helloDone: changeFlow
+        delay:
+            relative: 2
+    hello:
+        flow: hello
+        transitions: 
+            thanksDone: done
+        delay:
+            relative: 2
+    thanks:
+        flow: thanks
+        transitions: 
+            thanksDone: done
+        delay:
+            relative: 2
+    howAreYou: 
+        flow: howAreYou
+        transitions:
+            firstText: done
+        delay:
+            relative: 3
+    parking: 
+        flow: parking
+        transitions:
+            firstText: wit_state
+        delay:
+            relative: 3    
+    breakfast: 
+        flow: breakfast
+        transitions:
+            firstText: wit_state
+        delay:
+            relative: 3
+    love: 
+        flow: love
+        transitions:
+            firstText: done
+        delay:
+            relative: 2
+    booking: 
+        flow: booking
+        transitions:
+            text_state2: done
+        delay:
+            relative: 2
+    random: 
+        flow: random
+        transitions:
+            randomDone: wit_state
+        delay:
+            relative: 5
+    # add more states to feel if user need more info.
+    wit_state:
+        component: meya.wit
+        properties:
+            text: Can I help you with anything else today?
+            token: LJEFTDLHJPB7PGYTBTEKSHF45NFBGMBD
+            error_message: I don't understand
+            min_confidence: 0.8
+            require_match: false
+        transitions:
+            no: bad_state
+            yes: good_state
+            thanks: bad_state
+            howAreYou: howAreYou
+            parking: parking
+            transport: transport
+            breakfast: breakfast
+            checkIn: checkIn
+            no_match: ambiguous_state
+            hello: hello2
+            love: love            
+            booking: booking           
+            origin: random
+            botAge: random
+    bad_state:
+        component: meya.text
+        properties:
+            text: Ok. I'll be here if you need me again 🙂
+        return: true
+    good_state:
+        component: meya.text
+        properties:
+            text: Ok. What else can I help with? 🙂
+        return: true
+    ambiguous_state:
+        component: meya.text
+        properties:
+            text: Not sure what you mean. Please try again 🙂
+        return: true
+    hello2:
+        component: meya.text
+        properties:
+            text: Hello again
+        return: true
+    done: 
+        transitions:
+            next: done3
+            relative: 1
+    set_state1:
+        component: meya.set
+        properties:
+            key: second
+            value: yes
+            scope: user
+    done2: 
+        component: meya.text
+        properties:
+            text: Can I help you with anything else today? 
+    done3:
+        return: true

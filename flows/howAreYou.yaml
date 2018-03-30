@@ -1,0 +1,14 @@
+name: howAreYou
+states:
+    firstText:
+        component: meya.random_text
+        properties:
+            responses:
+                - "I'm fine, thanks for asking \U0001F604"
+                - "Great! How are you? \U0001F604"
+                - "Super duper. You? \U0001F604"
+        relative: 1
+        return: true
+    
+        
+      

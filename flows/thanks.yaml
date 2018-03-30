@@ -1,0 +1,27 @@
+name: thanks
+states:
+    checkIfReturning:
+        component: meya.conditional_equal
+        properties:
+            value1: '{{ user.hiThanks }}'
+            value2: "yes"
+        transitions:
+            equal: secondText
+            notequal: firstText
+    firstText:
+        component: meya.random_text
+        properties:
+            responses:
+                - "You are most welcome \U0001F604"
+                - "You are welcome. Just let me know if there is anthing else I can help you with today \U0001F604"
+                - "No problems, it was my pleasure \U0001F600"
+        relative: 1
+        transitions:
+            next: thanksDone
+            relative: 1
+    secondText:
+        component: meya.text
+        properties:
+            text: How can I be of service?
+    thanksDone:
+        return: true

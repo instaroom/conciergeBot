@@ -1,0 +1,20 @@
+-   flow: catchAll
+    intent: meya.keyword
+    settings:
+        ignorecase: true
+        keyword: e345gfdg333445
+-   flow: greetings
+    intent: meya.wit
+    settings:
+        min_confidence: '0.65'
+        token: LJEFTDLHJPB7PGYTBTEKSHF45NFBGMBD
+-   flow: howAreYou
+    intent: meya.keyword
+    settings:
+        ignorecase: true
+        keyword: test
+-   flow: witTest
+    intent: meya.keyword
+    settings:
+        ignorecase: true
+        keyword: start###

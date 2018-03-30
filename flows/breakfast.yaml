@@ -1,0 +1,20 @@
+name: breakfast
+states:
+    set_state:
+        component: meya.set
+        properties:
+            key: context
+            value: '{{ flow.intent }}'
+            scope: user
+    hiThanks:
+        component: meya.set
+        properties:
+            key: hiThanks
+            value: "no"
+            scope: user
+    firstText:
+        component: meya.text
+        properties:
+                text: Breakfast is at 7 am
+        relative: 2
+        return: true

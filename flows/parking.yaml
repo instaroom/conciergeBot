@@ -1,0 +1,27 @@
+name: parking
+states:
+    hiThanks:
+        component: meya.set
+        properties:
+            key: hiThanks
+            value: "no"
+            scope: user
+    secondQ:
+        component: meya.set
+        properties:
+            key: second
+            value: "yes"
+            scope: user
+    set_state:
+        component: meya.set
+        properties:
+            key: context
+            value: '{{ flow.intent }}'
+            scope: user
+    firstText:
+        component: meya.text
+        properties:
+                text: Parking is just around the corner. The price per day is 35 Euro. It's not possible to reserve a parking spot in advance.
+                # (Context = {{ flow.intent }} )
+        relative: 3
+        return: true

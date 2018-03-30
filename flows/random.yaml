@@ -1,0 +1,45 @@
+# add random questions here
+name: random
+states:
+    equal_check_state:
+        component: meya.conditional_equal
+        properties:
+            value1: '{{ flow.intent }}'
+            value2: "origin"
+        transitions:
+            equal: equal_state
+            notequal: notequal_state
+    equal_state:
+        component: meya.text
+        properties:
+            text: I am from Earth
+        transitions:
+            next: randomDone
+            relative: 1
+    notequal_state:
+        component: meya.text
+        properties:
+            text: 
+        transitions:
+            next: equal_check_state2
+            relative: 1
+    equal_check_state2:
+        component: meya.conditional_equal
+        properties:
+            value1: '{{ flow.intent }}'
+            value2: "botAge"
+        transitions:
+            equal: equal_state2
+            notequal: notequal_state2
+    equal_state2:
+        component: meya.text
+        properties:
+            text: I am not sure how old I am
+        transitions:
+            next: randomDone
+            relative: 1
+    notequal_state2:
+        transitions:
+            next: randomDone
+    randomDone:
+        return: true
